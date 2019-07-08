@@ -3,9 +3,11 @@
 **让写博客像发朋友圈一样简单**
 
 
+##### 详细说明地址：[https://mp.weixin.qq.com/s/mZTUrHREm5vw6c4Z7mMKeQ](https://mp.weixin.qq.com/s/mZTUrHREm5vw6c4Z7mMKeQ "https://mp.weixin.qq.com/s/mZTUrHREm5vw6c4Z7mMKeQ")
 
+##### 线上预览：
 
-
+![宅梦网](http://img04.sogoucdn.com/app/a/100520146/11C0D2FFE0D0B15D35DE2BB691D18672 "宅梦网")
 无需服务器无需域名，仅需注册一个小程序（免费）即可拥有自己的完整博客系统
 
 
@@ -62,3 +64,6 @@ config.js中，设置对应数据
  3.【设置】- -【关注公众号】--【公众号关注组件】- -设置相关公众号
  
  4.【开发】- -【开发设置】--配置request和downloadfile域名
+ 
+#### 六、创建了一个小程序开发交流圈，开发中遇到各种问题或者想学习开发小程序，可以加入我们：
+ ![交流圈](http://img02.sogoucdn.com/app/a/100520146/8942D339608297BB9EDD2F30DBBE9427 "交流圈")
