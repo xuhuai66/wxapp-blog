@@ -1,0 +1,42 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+page{
+
+  width: 100%;
+  height: 100%;
+  background-image: url('https://tvax1.sinaimg.cn/large/005BYqpggy1g4iwybtfg8j30le1211kx.jpg');
+  background-repeat:no-repeat; 
+background-attachment:fixed;
+background-size:100% 100%;
+}
+.cutText{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.borderRadius{
+  border-radius: 6px;
+  overflow: hidden;
+}
+.borderRadius-lg{
+  border-radius: 10px;
+  border:0.5px solid #ececec;
+  background: #ececec;
+  color: #000000;
+}
+
+.html{
+  padding:15px;
+  background: #ffffff;
+}
+
+
+.textareaView {
+	margin: 32rpx 0 30rpx;
+	height: 4.6em;
+	width: 100%;
+	line-height: 1.2em;
+	flex: 1;
+	font-size: 28rpx;
+	padding: 0;
+}

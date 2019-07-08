@@ -1,0 +1,11 @@
+.html{
+  padding:15px;
+  background: #ffffff;
+}
+.v_bottom{
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  display: flex;
+  width: 100%;
+}

@@ -1,0 +1,51 @@
+	<view class="cu-form-group">
+		<view class="title">标题</view>
+			<input placeholder="仅支持最多20个字" value='{{title}}' bindinput='titleInput' maxlength='20'></input>
+	</view>
+
+	<view class="cu-form-group align-start">
+		<view class="title">描述</view>
+		<textarea maxlength="-50" value='{{des}}' bindinput='desInput'placeholder="限制最多输入50字"></textarea>
+	</view>
+
+
+	<view class="cu-form-group">
+		<view class="title">类别</view>
+		<picker bindchange="kindChange"  range="{{kindList}}"range-key="title">
+			<view class="picker">
+			{{kind}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">是否公开</view>
+		<switch checked bindchange="openChange"/>
+	</view>
+
+
+<view class="cu-bar bg-white">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/9
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-yellow margin-tb-sm lg" bindtap='check'>保存发布</button>
+</view>

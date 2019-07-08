@@ -1,0 +1,223 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"appid": "wx710842f68581bf6d",
+	"projectname": "%E5%8D%9A%E5%AE%A2%E4%BA%91%E5%BC%80%E5%8F%91",
+	"libVersion": "2.7.2",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 25,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "【后台】首页",
+					"pathName": "pages/admin/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图片详情",
+					"pathName": "pages/details/photo/photo",
+					"query": "_id=2f54b0685d15d1f9026099c42086390f",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "【详情】公众号文章",
+					"pathName": "pages/details/wxArticle/wxArticle",
+					"query": "scene=13dba11c5d21d0c802c0d0e47e8a345e",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】通知管理",
+					"pathName": "pages/admin/notice/notice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "【后台】分类管理",
+					"pathName": "pages/admin/kind/kind",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "【tabbar】分类",
+					"pathName": "pages/kind/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】新增图片",
+					"pathName": "pages/admin/add/photo/photo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】新增视频",
+					"pathName": "pages/admin/add/video/video",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】新增微信文章",
+					"pathName": "pages/admin/add/wxArticle/wxArticle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】新增富文本",
+					"pathName": "pages/admin/add/richArticle/richArticle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【用户】留言",
+					"pathName": "pages/users/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】评论管理",
+					"pathName": "pages/admin/comments/comments",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】人员管理",
+					"pathName": "pages/admin/people/people",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】留言管理",
+					"pathName": "pages/admin/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "公众号文章",
+					"pathName": "pages/details/wxArticle/wxArticle",
+					"query": "scene=f1006ad85d20100201c030290acee5b9",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "【详情】富文本文章",
+					"pathName": "pages/details/richArticle/richArticle",
+					"query": "scene=3e1ef27b5d20558001f4b47e5ad9085a",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "【详情】视频",
+					"pathName": "pages/details/video/video",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "【详情】图片",
+					"pathName": "pages/details/photo/photo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】关联关联",
+					"pathName": "pages/admin/gzh/gzh",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【分类】列表",
+					"pathName": "pages/kind/list/list",
+					"query": "title=小程序",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "key=云开发",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "关于本程序",
+					"pathName": "pages/users/about/about",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【后台】内容管理",
+					"pathName": "pages/admin/contents/contents",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1047
+				}
+			]
+		}
+	}
+}

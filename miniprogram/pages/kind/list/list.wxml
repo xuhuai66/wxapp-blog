@@ -1,0 +1,115 @@
+<scroll-view  scroll-y scroll-with-animation  style="height:calc(100vh );" bindscrolltolower="bottom">
+<ad unit-id="{{BannerAd}}"></ad>
+<block wx:for="{{list}}"  wx:key="*this">
+   <view wx:for="{{item}}"  wx:key="_id"  style='width:{{Width}}px;margin:15px;background:#ffffff;border-radius:10px;overflow:hidden;box-shadow: 0px 0px 15px #888888;'class='solid-bottom'>
+
+       <!--图片类-->
+      <view wx:if="{{item.type=='photo'}}">
+             <view class='text-title text-cut margin-sm' bindtap='details' data-details='{{item}}'>{{item.title}}</view>
+            <view class='text-des text-xs margin-left-sm margin-bottom-xs' bindtap='details' data-details='{{item}}' wx:if="{{item.des}}">{{item.des}}</view>
+             <!--1张图片-->
+            <view wx:if="{{item.clouldPath.length==1}}">
+                  <image  mode='aspectFill' style='width:{{Width}}px;height:{{Width*0.6/2}}px;' lazy-load src="{{item.clouldPath[0]}}" bindtap='previewImg' data-img='{{item.clouldPath[0]}}'></image>
+            </view>
+            <!--2张图片-->
+            <view wx:elif="{{item.clouldPath.length==2}}">
+                  <view class="img-box bg-white" >
+                      <view wx:for="{{item.clouldPath}}"style="position: relative;width:{{Width/2}}px;height:{{Width*0.6/2}}px;" wx:key="*this">
+                         <image mode='aspectFill'  bindtap='previewImg' data-img='{{item}}' lazy-load style="width:{{Width/2}}px;height:{{Width*0.6/2}}px;"   src="{{item}}"/>
+                      </view>
+                  </view>
+             </view>
+            <!--3-9张图片-->  
+            <view wx:else >
+                <swiper autoplay interval="2500" duration="500" circular display-multiple-items="2" style="width:{{Width}}px;height:{{Width*0.6/2}}px;" easing-function="linear">
+                   <block wx:for="{{item.clouldPath}}">
+                         <swiper-item>
+                                <image mode='aspectFill' lazy-load src="{{item}}" class="slide-image" style="width:{{Width/2}}px;height:{{Width/2*0.6}}px;" bindtap='previewImg' data-img='{{item}}' />
+                         </swiper-item>
+                   </block>
+                 </swiper>
+            </view>
+            <!--信息条-->
+            <view class="flex  p-xs mb-sm" bindtap='details' data-details='{{item}}'>
+                <view class="flex-sub justify-center flex align-center">
+                    <view class="cu-avatar round sm" style="background-image:url({{item.origin.avatar}});"></view>
+                </view>
+                <view class="flex-twice  justify-start flex align-center text-gray text-sm">{{item.origin.name}}</view>
+                <view class="flex-treble  justify-end padding-sm flex align-center text-gray text-sm">{{item.updatedDate}}</view>
+            </view>
+      </view>
+
+
+       <!--微信文章类-->
+      <view wx:elif="{{item.type=='wxArticle'}}" bindtap='details' data-details='{{item}}'>
+             <view class='flex'>
+                <view class="flex-twice" style='width:{{2*img3_width}}px;height:{{img3_height}}px;'>
+                    <!--标题内容-->
+                    <view class='text-title margin-left margin-right margin-top margin-bottom-xs' >{{item.title}}</view>
+                <view class='text-des text-grey margin-left margin-right margin-bottom-xs' bindtap='details' data-details='{{item}}'>{{item.des?item.des:'点我可查看详情哟~~'}}</view>  
+                </view>
+                <view class="flex-sub" style='width:{{img3_width}}px;'>
+                   <view class='margin'>
+                    <image lazy-load src="{{item.cover}}" style='width:{{img3_width-20}}px;height:{{img3_height-12.36}}px;border-radius:5px;'></image>
+                    </view>
+                </view>
+             </view>
+            <!--信息条-->
+            <view class="flex p-xs mb-sm" >
+                <view class="flex-sub justify-center flex align-center">
+                    <view class="cu-avatar round sm" style="background-image:url({{item.origin.avatar}});"></view>
+                </view>
+                <view class="flex-twice  justify-start flex align-center text-gray text-sm text-cut">{{item.origin.name}}</view>
+                <view class="flex-treble  justify-end padding-sm flex align-center text-gray text-sm">{{item.updatedDate}}</view>
+            </view>
+      </view>
+
+<!--富文本文章类-->
+      <view wx:elif="{{item.type=='richArticle'}}" bindtap='details' data-details='{{item}}'>
+             <view class='flex'>
+                <view class="flex-twice" style='width:{{2*img3_width}}px;height:{{img3_height}}px;'>
+                    <!--标题内容-->
+                    <view class='text-title margin-left margin-right margin-top margin-bottom-xs' >{{item.title}}</view>
+                <view class='text-des text-grey margin-left margin-right margin-bottom-xs' bindtap='details' data-details='{{item}}'>{{item.des?item.des:'点我可查看详情哟~~'}}</view>  
+                </view>
+                <view class="flex-sub" style='width:{{img3_width}}px;'>
+                   <view class='margin'>
+                    <image lazy-load src="{{item.cover}}" style='width:{{img3_width-20}}px;height:{{img3_height-12.36}}px;border-radius:5px;'></image>
+                    </view>
+                </view>
+             </view>
+            <!--信息条-->
+            <view class="flex p-xs mb-sm" >
+                <view class="flex-sub justify-center flex align-center">
+                    <view class="cu-avatar round sm" style="background-image:url({{item.origin.avatar}});"></view>
+                </view>
+                <view class="flex-twice  justify-start flex align-center text-gray text-sm text-cut">{{item.origin.name}}</view>
+                <view class="flex-treble  justify-end padding-sm flex align-center text-gray text-sm">{{item.updatedDate}}</view>
+            </view>
+      </view>
+      <!--视频类-->
+      <view wx:elif="{{item.type=='video'}}">
+      <!--标题-->
+         <view class='text-sm text-cut margin-sm' bindtap='details' data-details='{{item}}'>{{item.title}}</view>
+         <view class='video' >
+         <video 
+         controls
+         show-mute-btn
+         title="{{item.title}}"
+         src="{{item.clouldPath}}"
+         style='width:{{Width}}px;height:{{Height*0.8}}px;'
+         >
+         </video>
+         </view>
+         <!--信息条-->
+         <view class="flex  p-xs mb-sm" bindtap='details' data-details='{{item}}'>
+             <view class="flex-sub justify-center flex align-center">
+                <view class="cu-avatar round sm" style="background-image:url({{item.origin.avatar}});"></view>
+             </view>
+             <view class="flex-twice  justify-start flex align-center text-gray text-sm">{{item.origin.name}}</view>
+             <view class="flex-treble  justify-end padding-sm flex align-center text-gray text-sm">{{item.updatedDate}}</view>
+         </view>
+      </view>
+   </view>
+ </block>
+ </scroll-view>

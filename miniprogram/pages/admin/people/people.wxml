@@ -1,0 +1,27 @@
+<block wx:for="{{list}}" wx:key="*this">
+ <block wx:for="{{item}}" wx:key="_id">
+  <view class="cu-list menu-avatar">
+    <view class="cu-item">
+      <view class="cu-avatar round lg" style="background-image:url({{item.detail.avatarUrl}});">
+      </view>
+      <view class="content">
+        <view class="text-grey">
+          <text class="text-cut">{{item.detail.nickName}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.detail.city}}</text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">2019/7/21 27:27:0</view>
+      </view>
+    </view>
+</view>
+<view class="flex margin-bottom">
+    <view class="flex-sub  padding-sm radius text-center bg-red light" wx:if="{{item.used}}" bindtap='verify' data-set='false' data-user='{{item}}'>禁用</view>
+    <view class="flex-sub  padding-sm radius text-center bg-orange light" wx:if="{{!item.used}}" bindtap='verify' data-set='true' data-user='{{item}}'>恢复</view>
+       <view class="flex-sub  padding-sm radius text-center bg-blue light" wx:if="{{!item.admin}}" bindtap='admin' data-set='true' data-user='{{item}}'>设为管理员</view>
+    <view class="flex-sub  padding-sm radius text-center bg-cyan light" wx:if="{{item.admin}}" bindtap='admin' data-set='false' data-user='{{item}}'>取消管理员</view>
+</view>
+</block>
+</block>      

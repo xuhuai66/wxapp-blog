@@ -1,0 +1,47 @@
+	<view class="cu-form-group">
+		<view class="title">标题</view>
+			<input placeholder="仅支持最多20个字" value='{{title}}' bindinput='titleInput' maxlength='20'></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">类别</view>
+		<picker bindchange="kindChange"  range="{{kindList}}"range-key="title">
+			<view class="picker">
+			{{kind}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">是否公开</view>
+		<switch checked bindchange="openChange"/>
+	</view>
+
+
+<view class="cu-bar bg-white">
+		<view class="action">视频上传</view>
+		<view class="action" wx:if="{{!video}}">0/1</view>
+    <view class="action" wx:else>	1/1</view>
+</view>
+	<view class="cu-form-group" wx:if="{{!video}}">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="solids" bindtap="chooseVideo" >
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  <view wx:else class='bg-white text-center'>
+        <video
+            src="{{video.tempFilePath}}"
+            autoplay
+            controls="false"
+            muted
+            show-play-btn="false"
+            show-center-play-btn="false"
+            loop
+         />
+      <view class='padding text-gray' bindtap="chooseVideo"><text class="cuIcon-pick lg"></text> 重新选择</view>
+  </view>
+
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-yellow margin-tb-sm lg" bindtap='check'>保存发布</button>
+</view>

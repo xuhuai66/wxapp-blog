@@ -1,0 +1,23 @@
+<block wx:for="{{list}}" wx:key="*this">
+<block wx:for="{{item}}" wx:key = "_id">
+<view class='margin' >
+
+<view class='flex bg-white' style='border-radius:6px 6px 0 0 ;overflow:hidden'>
+       <view  class='basis-xl text-cut text-black margin-sm flex justify-center align-center text-lg'  bindtap='details' data-details='{{item}}' >{{item.title}}</view>
+       <view  class='basis-xs text-cut flex justify-center align-center text-df bg-yellow' bindtap='del' data-details='{{item}}' ><text class="cuIcon-close  text-xl" ></text> 删除</view>
+</view>
+
+<view class='padding-left padding-right bg-white' style='border-radius:0 0 6px 6px;overflow:hidden'bindtap='details' data-details='{{item}}'>
+  <view class='textlg padding-top padding-bottom'> {{item.content}}</view>
+  <view class='flex'> 
+      <view class='padding-sm flex-sub flex justify-start text-sm text-red ' wx:if="{{!item.openView}}">状态：未审</view>
+      <view class='padding-sm flex-sub flex justify-start text-sm ' wx:if="{{item.openView}}">状态：已审</view>
+       <view class='padding-sm flex-sub flex justify-end text-xs' >{{item.date}}</view>
+  </view>
+</view>
+</view>
+</block>
+<view wx:if='{{item==""}}' class='margin bg-white padding flex justify-center' style='border-radius:6px'>
+---暂无内容---
+</view>
+</block>

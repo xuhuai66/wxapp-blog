@@ -1,0 +1,36 @@
+	<view class="cu-form-group">
+		<view class="title">类别</view>
+		<picker bindchange="kindChange"  range="{{kindList}}"range-key="title">
+			<view class="picker">
+			{{kind}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">是否公开</view>
+		<switch checked bindchange="openChange"/>
+	</view>
+
+
+	<view class="cu-form-group solid-bottom">
+		<textarea maxlength="50"  bindinput="urlInput" value='{{url}}' placeholder="请输入公众号文章地址,为支持保护原创，该页内容禁止编辑"></textarea>
+	</view>
+
+
+
+
+  <view class="flex">
+      <view class="flex-sub  padding-sm radius text-center bg-orange" bindtap='stick'>粘贴</view>
+      <view class="flex-sub  padding-sm  radius text-center bg-yellow" bindtap='checkUrl'>生成</view>
+  </view>
+
+
+<view class='html' wx:if="{{html}}">
+<Parser html="{{html}}"  show-with-animation animation-duration="500" img-mode="widthFix"></Parser>
+</view>
+
+
+  <view class="padding flex flex-direction v_bottom" wx:if="{{html}}">
+  <button class="cu-btn bg-yellow margin-tb-sm lg" bindtap='check'>保存发布</button>
+</view>

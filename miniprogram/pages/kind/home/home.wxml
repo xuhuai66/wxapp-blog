@@ -1,0 +1,21 @@
+<official-account></official-account>
+
+<view class='kind_contain' style='margin:10px'>
+<block wx:for="{{list}}" wx:key="_id">
+     <view  style='width:{{app_width/2-10}}px' bindtap='details' data-details='{{item}}'>
+        <view class='bg-whites borderRadius' style='margin:10px;overflow:hidden'>
+             <view  style='padding:10px'>
+                    <image src='{{item.posterUrl}}' style='width:{{app_width/2-50}}px;height:{{app_width/2-50}}px;border-radius:10px' ></image>
+             </view>
+             <view class='padding-sm bg-white'>
+                    <view class='text-black'>{{item.title}}</view>
+                     <view class='text-grey text-sm'>{{item.des}}</view>
+             </view>
+        </view>
+     </view>
+</block>
+</view>
+
+
+
+<import src="/template.wxml"/><template is="share" />

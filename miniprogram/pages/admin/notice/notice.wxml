@@ -1,0 +1,41 @@
+
+<view class='margin bg-white borderRadius'  wx:for="{{list}}" wx:key = "_id">
+    <view class='padding'>{{item.content}}</view>
+    <view class='solid-top padding-sm text-center text-red'  data-notice='{{item}}' bindtap='del'>删除</view>
+</view>
+
+<view class='margin bg-white borderRadius'  wx:if="{{list==''}}">
+    <view class='padding-sm text-center text-title bg-yellow'>功能说明</view>
+    <view class='solid-top padding '>此处通知将于首页顶部滚动显示</view>
+</view>
+
+
+
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-yellow lg" bindtap="showModal" >新增</button>
+</view>
+
+
+
+<view class="cu-modal show" hidden='{{noticeModel}}'>
+  <view class="cu-dialog">
+    <view class="cu-bar bg-yellow justify-end">
+      <view class="content text-white">新增通知</view>
+         <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-white"></text>
+      </view>
+    </view>
+    <view class="padding">
+      	<view class="cu-form-group">
+		<textarea maxlength="22"  bindinput="noticeInput" placeholder="请输入通知内容，最多支持21字，不然会被折叠" value='{{notice}}'></textarea>
+	</view>
+    </view>
+    <view class='flex '>
+         <button class="cu-btn bg-white lg flex-sub" bindtap="hideModal" >取消</button>
+          <button class="cu-btn bg-yellow lg flex-sub " bindtap="addDb" >新增</button>
+    </view>
+  </view>
+    </view>
+
+
+

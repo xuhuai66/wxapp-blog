@@ -1,0 +1,40 @@
+
+<view class='margin bg-white borderRadius'  wx:for="{{list}}" wx:key = "_id">
+    <view class='padding'>已关联公众号：{{item.name}}</view>
+    <view class='solid-top padding-sm text-center text-red'  data-gzh='{{item}}' bindtap='del'>删除</view>
+</view>
+
+<view class='margin bg-white borderRadius'  wx:if="{{list==''}}">
+    <view class='padding-sm text-center text-title  bg-yellow'>功能说明</view>
+    <view class='solid-top padding '>将与本程序关联的公众号名称添加上，然后在具体文章页可直接跳转到对应公众号文章原文</view>
+</view>
+
+
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-yellow lg" bindtap="showModal" >新增</button>
+</view>
+
+
+
+<view class="cu-modal show" hidden='{{gzhModel}}'>
+  <view class="cu-dialog">
+    <view class="cu-bar bg-yellow justify-end">
+      <view class="content text-white">新增关联公众号</view>
+         <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-white"></text>
+      </view>
+    </view>
+    <view class="padding">
+      	<view class="cu-form-group">
+		<textarea maxlength="22"  bindinput="gzhInput" placeholder="请输入关联的公众号，请确保小程序与公众号关联成功" value='{{gzh}}'></textarea>
+	</view>
+    </view>
+    <view class='flex '>
+         <button class="cu-btn bg-white lg flex-sub" bindtap="hideModal" >取消</button>
+          <button class="cu-btn bg-yellow lg flex-sub " bindtap="addDb" >新增</button>
+    </view>
+  </view>
+    </view>
+
+
+

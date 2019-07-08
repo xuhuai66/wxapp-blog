@@ -1,0 +1,60 @@
+<view class='margin bg-white'  wx:for="{{list}}" wx:key="_id">
+   <view class="cu-list menu-avatar">
+         <view class="cu-item ">
+              <image class="cu-avatar lg bg-white" src='{{item.posterUrl}}' lazy-load></image>
+             <view class="content">
+                  <view class="text-pink">
+                       <text class="text-cut">{{item.title}}</text>
+                  </view>
+                  <view class="text-gray text-sm flex">
+                      <text class="text-cut">{{item.des}}</text>
+                 </view>
+             </view>
+          </view>
+    </view>
+
+    <view class='flex '>
+         <button class="cu-btn bg-yellow light lg flex-sub" bindtap="del" data-kind='{{item}}' >删除</button>
+          <button class="cu-btn bg-yellow lg flex-sub " bindtap="goList" data-details="{{item}}">查看相关内容</button>
+    </view>
+</view>
+
+
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-yellow lg" bindtap="showModal" >新增</button>
+</view>
+
+
+
+<view class="cu-modal show" hidden='{{addModel}}'>
+  <view class="cu-dialog">
+    <view class="cu-bar bg-yellow justify-end">
+      <view class="content text-white">新增分类</view>
+         <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-white"></text>
+      </view>
+    </view>
+    
+    <view class="cu-form-group">
+		    <view class="title">分类标题</view>
+	    	<input placeholder="仅支持最多6个字" value='{{title}}' bindinput='titleInput' maxlength='6'></input>
+    </view>   
+    <view class="cu-form-group">
+        <view class="title">分类描述</view>
+	    	<input placeholder="仅支持最多11个字" value='{{des}}' bindinput='desInput' maxlength='11'></input>
+	  </view>
+    	<view class="cu-form-group">
+		<view class="title">封面图</view>
+    <view class="title text-grey" wx:if="{{poster!==''}}" bindtap='chooseImg'>重新上传</view>
+    <image wx:if="{{poster==''}}" class='cu-avatar  bg-white' src='../../../images/add.png' bindtap='chooseImg'></image>
+    <image wx:if="{{poster!==''}}" class='cu-avatar  bg-white' src='{{poster}}' bindtap='previewImg' data-img='{{poster}}'></image>
+	</view>  
+
+
+   
+    <view class='flex '>
+         <button class="cu-btn bg-white lg flex-sub" bindtap="hideModal" >取消</button>
+          <button class="cu-btn bg-yellow lg flex-sub " bindtap="add" >新增</button>
+    </view>
+  </view>
+    </view>

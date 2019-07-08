@@ -1,0 +1,140 @@
+<view class='html' wx:if="{{details.openView}}">
+       <view class='text-black text-xl'>{{details.title}}</view>
+       <view class='text-grey padding text-sub'>来源：{{details.origin.name}}</view>
+        <Parser html="{{details.content}}"  show-with-animation animation-duration="500" img-mode="widthFix"></Parser>
+</view>
+<view class='html' wx:if="{{!details.openView}}">
+        <view class='text-center' >该文章已关闭显示</view>
+</view>
+
+<ad unit-id="{{BannerAd}}"></ad>
+<!--随机推荐-->
+<view class="cu-list menu">
+ <view class="cu-item" style='padding-left:10px'>
+      <view class="content" >
+         <text class="cuIcon-titles text-blue text-xl"></text>
+      <text class=" text-medium text-black">猜你喜欢</text>
+      </view>
+      <view class="action" bindtap='randLike'>
+      <text class="cuIcon-refresh text-sm text-gray"></text>
+        <text class="text-gray text-sm"> 换一批</text>
+      </view>
+</view>
+</view>
+<view wx:for="{{randList}}" wx:key="_id" wx:for-index="index" class='padding-left padding-right bg-white' >
+     <view class='cut_text text-medium padding-bottom' bindtap='goRand' data-details='{{item}}'>{{index+1}}.{{item.title}}</view>
+</view>
+
+<!--评论交流-->
+ <view class="cu-list menu">
+ <view class="cu-item" >
+      <view class="content" >
+         <text class="cuIcon-titles text-blue text-xl"></text>
+      <text class=" text-medium text-black">评论交流</text>
+      </view>
+      <view class="action" bindtap='toWrite'>
+      <text class="cuIcon-edit text-sm text-gray"></text>
+        <text class="text-gray text-sm"> 我要写</text>
+      </view>
+</view>
+</view> 
+
+<block wx:for="{{comments}}" wx:key="*this">
+<block wx:for="{{item}}" wx:key="_id" wx:if="{{item!==''}}">
+<view class="cu-list menu-avatar comment solids-top" style='margin-top:0'>
+      <view class="cu-item">
+            <view class="cu-avatar round" style="background-image:url({{item.userInfo.avatarUrl}});"></view>
+            <view class="content">
+            <view class="text-grey">{{item.userInfo.nickName}}</view>
+           <view class="text-gray text-content text-df"> {{item.content}}</view>
+           <view class="bg-grey light padding-sm radius margin-top-sm  text-sm" wx:if="{{item.reply.code==1}}">
+               <view class="flex">
+                       <view>{{item.reply.admin.nickName}}：</view>
+                      <view class="flex-sub">{{item.reply.content}}</view>
+            </view> 
+        </view>
+        <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{item.date}}</view>
+        <view>
+        </view>
+      </view>
+      </view>
+    </view>
+</view>
+</block>
+</block>
+<view wx:if="{{viewList==''}}" class='text-center padding bg-white'>
+暂无留言哟，赶快撰写吧~~
+</view>
+
+<view class='margin'>
+    <view class="cu-form-group" style='border-radius:8px 8px 0 0'>
+		      <textarea  show-confirm-bar="{{false}}" maxlength="100" wx:if="{{inputfocus}}" focus="{{inputfocus}}"  bindinput="commentInput"  bindconfirm="checkComment" value='{{commentInput}}' ></textarea>
+         <view class='textareaView text-grey' wx:if="{{!inputfocus}}" bindtap='toWrite' >{{commentInput?commentInput:'请开始您的评论，最多100字；评论需管理员审核后方可见'}}
+         </view>
+  	</view>
+    <view class=" flex justify-center bg-white padding solid-top" bindtap="checkComment" style='border-radius:0 0 8px 8px'>
+          <view class="text-gray text-df">
+                 <text class="cuIcon-write"></text>
+                 <text > 发送</text>
+          </view>
+    </view>
+</view>
+
+
+  <!--底部tabbar-->
+  <view class='cu-bar'></view>
+  <view class="cu-bar tabbar  foot bg-white">
+    <view class="action text-black" bindtap='home'>
+      <view class="cuIcon-home"></view> 首页
+    </view>
+     <view class="action text-black" bindtap='previewImg' data-img='https://tvax1.sinaimg.cn/large/005BYqpggy1g4ljw56qwhj30st0sttao.jpg'>
+      <view class=" cuIcon-like">
+      </view>
+     赞赏
+    </view>
+    <view class="action" bindtap='check_draw'>
+      <view class="cuIcon-cu-image">
+        <image src="/images/tabbar/poster.png"></image>
+      </view>
+      <view class="text-black">海报</view>
+    </view>
+    <view class="action text-black add-action">
+      <button class="cu-btn cuIcon-forwardfill bg-yellow shadow" open-type='share'></button>
+      转发
+    </view>
+  </view>
+
+
+
+
+
+  <!--授权提示框-->
+<view class="cu-modal {{modalName=='authorize'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">温馨提示</view>
+    </view>
+    <view class="padding-xl">
+      请授权后再进行操作
+    </view>
+
+  <view class="cu-bar btn-group bg-white">
+    <button class="cu-btn bg-green shadow-blur round" bindtap="hideModal">取消</button>
+    <button class="cu-btn bg-blue shadow-blur round" bindgetuserinfo='getuser' open-type='getUserInfo'>确定</button>
+  </view>
+  </view>
+</view>
+
+  <!--海报提示框-->
+<view class="cu-modal {{modalName=='posterTip'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog bg-white">
+    <image style='width:100%' src="{{shareImage}}" mode='widthFix'/>
+    <view class='flex'>
+        <view class='flex-sub padding-sm text-center bg-white' bindtap="hideModal">取消</view>
+        <view class='flex-sub padding-sm text-center bg-orange' bindtap='save_poster'>保存</view>
+    </view>
+  </view>
+</view>
+<canvasdrawer painting="{{painting}}" bind:getImage="eventGetImage"/>
+

@@ -1,0 +1,51 @@
+  
+  <view class='margin-sm bg-white radius padding'>
+
+<view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-yellow"></text>
+      <text class="text-lg text-bold">使用申明</text>
+    </view>
+  </view>
+  <view class='text-grey text-lg'>本程序源码完全开源，禁止任何形式倒卖，如需搭建，请看相关教程</view>
+
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-yellow"></text>
+      <text class="text-lg text-bold">开发环境</text>
+    </view>
+  </view>
+  <view class='text-grey text-lg'>本程序由原生小程序开发，数据存储及相关函数处理借助了小程序云开发功能，部分接口使用了PHP处理</view>
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-yellow"></text>
+      <text class="text-lg text-bold">组件支持</text>
+    </view>
+  </view>
+  <view class='text-grey text-lg'>感谢ColorUI组件库支持</view>
+    <view class='text-grey text-lg  margin-top-xs' bindtap='copy' data-copy='https://github.com/weilanwl/ColorUI'>地址：<text class='text-blue underline text-sub'>https://github.com/weilanwl/ColorUI</text></view>
+  <view class='text-grey text-lg margin-top-sm'>感谢Parser富文本支持</view>
+    <view class='text-grey text-lg  margin-top-xs' bindtap='copy' data-copy='https://github.com/jin-yufeng/Parser'>地址：<text class='text-blue underline text-sub'>https://github.com/jin-yufeng/Parser</text></view>
+
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-yellow"></text>
+      <text class="text-lg text-bold">开源相关</text>
+    </view>
+  </view>
+  <view class='text-grey text-lg'>目前本程序已开源发布在Github</view>
+    <view class='text-grey text-lg  margin-top-xs'  bindtap='copy' data-copy='https://github.com/xuhuai66/userd-books'>地址：<text class='text-blue underline text-sub'>https://github.com/xuhuai66/wxapp-blog</text></view>
+     <view class='text-grey text-lg  margin-top-xs'>相关部署教程正在整理，之后会更新在Github</view>
+
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-yellow"></text>
+      <text class="text-lg text-bold">问题反馈</text>
+    </view>
+  </view>
+  <view class='text-grey text-lg'>程序BUG请及时向本人反馈</view>
+    <view class='text-grey text-lg  margin-top-xs'  bindtap='copy' data-copy='xuhuai66'>微信：<text class='text-blue underline text-sub'>xuhuai66</text></view>
+      <view class='text-grey text-lg  margin-top-xs'  bindtap='copy' data-copy='1604026596'>QQ：<text class='text-blue underline text-sub'>1604026596</text></view>
+      <view class='text-grey text-lg  margin-top-xs'  bindtap='copy' data-copy='宅机吧'>公众号：<text class='text-blue underline text-sub'>宅机吧</text></view>
+
+  </view>

@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/web-view/web-view",
+    "pages/search/search",
+
+    "pages/kind/home/home",
+    "pages/kind/list/list",
+
+    "pages/details/photo/photo",
+    "pages/details/video/video",
+    "pages/details/wxArticle/wxArticle",
+    "pages/details/richArticle/richArticle",
+
+    "pages/users/about/about",
+    "pages/users/comments/comments",
+    "pages/users/message/message",
+
+    "pages/admin/people/people",
+    "pages/admin/home/home",
+    "pages/admin/gzh/gzh",
+    "pages/admin/comments/comments",
+    "pages/admin/message/message",
+    "pages/admin/contents/contents",
+    "pages/admin/notice/notice",
+    "pages/admin/add/wxArticle/wxArticle",
+    "pages/admin/add/richArticle/richArticle",
+    "pages/admin/add/video/video",
+    "pages/admin/add/photo/photo",
+    "pages/admin/kind/kind"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fbbd08",
+    "navigationBarTitleText": "宅梦网",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tabbar/home.png",
+        "selectedIconPath": "/images/tabbar/home_on.png"
+      },
+      {
+        "pagePath": "pages/kind/home/home",
+        "text": "分类",
+        "iconPath": "/images/tabbar/kind.png",
+        "selectedIconPath": "/images/tabbar/kind_on.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/tabbar/my.png",
+        "selectedIconPath": "/images/tabbar/my_on.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "canvasdrawer": "/components/canvasdrawer/canvasdrawer",
+    "Parser": "/Parser/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

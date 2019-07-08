@@ -1,0 +1,46 @@
+	<view class="cu-form-group">
+		<view class="title">标题</view>
+			<input placeholder="仅支持最多20个字" value='{{title}}' bindinput='titleInput' maxlength='20'></input>
+	</view>
+
+	<view class="cu-form-group align-start">
+		<view class="title">描述</view>
+		<textarea maxlength="50" value='{{des}}' bindinput='desInput'placeholder="限制最多输入50字"></textarea>
+	</view>
+
+
+	<view class="cu-form-group">
+		<view class="title">类别</view>
+		<picker bindchange="kindChange"  range="{{kindList}}"range-key="title">
+			<view class="picker">
+			{{kind}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">是否公开</view>
+		<switch checked bindchange="openChange"/>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">封面图</view>
+    <view class="title text-grey" wx:if="{{cover!==''}}" bindtap='chooseImg'>重新上传</view>
+    <image wx:if="{{cover==''}}" class='cu-avatar  bg-white' src='../../../../images/add.png' bindtap='chooseImg'></image>
+    <image wx:if="{{cover!==''}}" class='cu-avatar  bg-white' src='{{cover}}' bindtap='previewImg' data-img='{{cover}}'></image>
+	</view>  
+	<view class="cu-form-group">
+		<view class="title">富文本</view>
+    <button class="cu-btn bg-white shadow" bindtap='stick'>粘贴</button>
+	  </view>
+  <view class="cu-form-group align-start" hidden='{{preContent}}'>
+         <textarea maxlength ="-1" value='{{content}}'  placeholder="直接粘贴你在其它编辑器里面编辑好的html或mark" bindinput='contentInput'></textarea>
+  </view>
+<view class='html' wx:if="{{content}}">
+<view class='text-center text-lg text-xs'>《《预览》》</view>
+<Parser html="{{content}}"  show-with-animation animation-duration="500" img-mode="widthFix"></Parser>
+</view>
+
+  <view class="padding flex flex-direction v_bottom" wx:if="{{content}}">
+  <button class="cu-btn bg-yellow margin-tb-sm lg" bindtap='check'>保存发布</button>
+</view>

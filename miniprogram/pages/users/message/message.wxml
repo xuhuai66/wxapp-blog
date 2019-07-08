@@ -1,0 +1,103 @@
+	<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-write text-black"></text>
+    <text>撰写</text>
+  </view>
+</view>
+  
+ <view class="cu-form-group">
+	          	<textarea maxlength="50" value='{{message}}' bindinput='messInput'placeholder="留言输入，管理员审核后方才展示；请勿乱发，管理员有权禁用账号" show-confirm-bar='{{false}}'></textarea>
+</view>
+
+<view class="flex">
+    <view class="flex-sub  padding-sm radius text-center bg-white" ></view>
+    <view class="flex-sub  padding-sm  radius text-center bg-yellow" bindtap='checkLogin'>发布</view>
+</view>
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-comment text-black"></text>
+    <text>我的留言</text>
+  </view>
+</view>
+
+<block wx:for="{{myList}}" wx:key="_id" wx:if="{{myList0!==''}}">
+<view class="flex bg-white">
+      <view class="flex-sub padding-sm"><text class="cuIcon-countdown text-black"></text>  {{item.date}}</view>
+      <view class="flex-sub padding-sm text-right">
+          <view class="cu-capsule round">
+               <view class="cu-tag bg-grey">状态</view>
+               <view class="cu-tag line-grey" wx:if="{{item.openView}}">已审</view>
+                 <view class="cu-tag line-red" wx:if="{{!item.openView}}">未审</view>
+          </view>
+      </view>
+</view>
+<view class='padding bg-white'>
+    <!-->
+     <view class='borderRadius-lg padding light'>{{item.message}}</view>
+     -->
+ <view class='flex borderRadius-lg'>
+      <view class='basis-xl padding'>{{item.message}}</view>
+      <view class='basis-xs text-red flex justify-center padding text-xl text-bold' bindtap='del' data-details='{{item}}'><text class="cuIcon-close " ></text> </view>
+ </view>
+
+</view>
+</block>
+
+<view wx:if="{{myList==''}}" class='text-center padding bg-white'>
+您还未留言哟，赶快撰写吧~~
+</view>
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-mark text-black"></text>
+    <text>留言墙</text>
+  </view>
+</view>
+<block wx:for="{{viewList}}" wx:key="_id" wx:if="{{viewList!==''}}">
+
+<view class="cu-list menu-avatar comment solids-top" style='margin-top:0'>
+      <view class="cu-item">
+            <view class="cu-avatar round" style="background-image:url({{item.userInfo.avatarUrl}});"></view>
+            <view class="content">
+            <view class="text-grey">{{item.userInfo.nickName}}</view>
+           <view class="text-gray text-content text-df"> {{item.message}}</view>
+           <view class="bg-grey light padding-sm radius margin-top-sm  text-sm" wx:if="{{item.reply.code==1}}">
+               <view class="flex">
+                       <view>{{item.reply.admin.nickName}}：</view>
+                      <view class="flex-sub">{{item.reply.content}}</view>
+            </view> 
+        </view>
+        <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{item.date}}</view>
+        <view>
+        </view>
+      </view>
+      </view>
+    </view>
+</view>
+</block>
+
+<view wx:if="{{viewList==''}}" class='text-center padding bg-white'>
+暂无留言哟，赶快撰写吧~~
+</view>
+
+
+
+
+  <!--授权提示框-->
+<view class="cu-modal {{modalName=='authorize'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">温馨提示</view>
+    </view>
+    <view class="padding-xl">
+      请授权后再进行操作
+    </view>
+
+  <view class="cu-bar btn-group bg-white">
+    <button class="cu-btn bg-green shadow-blur round" bindtap="hideModal">取消</button>
+    <button class="cu-btn bg-blue shadow-blur round" bindgetuserinfo='getuser' open-type='getUserInfo'>确定</button>
+  </view>
+  </view>
+</view>

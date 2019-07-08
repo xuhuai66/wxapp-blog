@@ -1,0 +1,104 @@
+
+
+<view class="cu-list menu  sm-border card-menu margin-top shadow-lg">
+    <view class="cu-item arrow" bindtap="showModal" data-target="addNew">
+      <view class="content">
+        <text class="cuIcon-roundadd text-black"></text>
+        <text class="text-grey">新增内容</text>
+      </view>
+    </view>
+
+
+    <view class="cu-item arrow" bindtap="go" data-to="contents">
+      <view class="content">
+       <text class="cuIcon-form text-olive"></text>
+        <text class="text-grey">内容管理</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow" bindtap="go" data-to="comments">
+      <view class="content">
+       <text class="cuIcon-mark text-cyan"></text>
+        <text class="text-grey">评论管理</text>
+      </view>
+    </view>
+
+
+<view class="cu-item arrow" bindtap="go" data-to="message">
+      <view class="content">
+      <text class="cuIcon-comment text-blue"></text>
+        <text class="text-grey">留言管理</text>
+      </view>
+    </view>
+
+<view class="cu-item arrow" bindtap="go" data-to="kind">
+      <view class="content">
+       <text class="cuIcon-sort text-grey"></text>
+        <text class="text-grey">分类管理</text>
+      </view>
+    </view>
+
+<view class="cu-item arrow" bindtap="go" data-to="people">
+      <view class="content">
+        <text class="cuIcon-peoplelist text-orange"></text>
+        <text class="text-grey">人员管理</text>
+      </view>
+    </view>
+
+
+<view class="cu-item arrow" bindtap="go" data-to="notice">
+      <view class="content">
+        <text class="cuIcon-notification text-red"></text>
+        <text class="text-grey">通知管理</text>
+      </view>
+    </view>
+
+<view class="cu-item arrow" bindtap="go" data-to="gzh">
+      <view class="content">
+        <text class="cuIcon-share text-green"></text>
+        <text class="text-grey">关联管理</text>
+      </view>
+    </view>
+
+   
+
+ </view>
+
+
+
+ <!--新增内容的弹窗选择-->
+ <view class="cu-modal {{modalName=='addNew'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog">
+
+  <view class="cu-list grid col-2">
+
+    <view class="cu-item" bindtap='add' data-to="photo">
+      <view class="cuIcon-picfill text-yellow">
+      </view>
+      <text>图片</text>
+    </view>
+
+    <view class="cu-item" bindtap='add' data-to="video">
+      <view class="cuIcon-recordfill text-orange">
+      </view>
+      <text>视频</text>
+    </view>
+
+    <view class="cu-item" bindtap='add' data-to="wxArticle">
+      <view class="cuIcon-formfill text-blue">
+      </view>
+      <text>微信文章</text>
+    </view>
+
+    <view class="cu-item" bindtap='add' data-to="richArticle">
+      <view class="cuIcon-edit text-green">
+      </view>
+      <text>富文本</text>
+    </view>
+  </view>
+
+
+
+
+  </view>
+</view>

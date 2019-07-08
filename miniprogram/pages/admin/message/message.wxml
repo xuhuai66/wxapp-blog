@@ -1,0 +1,34 @@
+<block wx:for="{{list}}" wx:key="*this">
+ <block wx:for="{{item}}" wx:key="_id">
+
+<view class="cu-list menu-avatar comment solids-top" style='margin-top:0'>
+      <view class="cu-item">
+        <view class="cu-avatar round" style="background-image:url({{item.userInfo.avatarUrl}});"></view>
+        <view class="content">
+            <view class="text-grey">{{item.userInfo.nickName}}</view>
+           <view class="text-gray text-content text-df"> {{item.message}}</view>
+           <view class="bg-grey light padding-sm radius margin-top-sm  text-sm" wx:if="{{item.reply.code==1}}">
+               <view class="flex">
+                       <view>{{item.reply.admin.nickName}}：</view>
+                      <view class="flex-sub">{{item.reply.content}}</view>
+                       <view bindtap='del' data-mess='{{item}}'><text class='cuIcon-close lg text-red'></text></view>
+            </view> 
+        </view>
+        <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{item.date}}</view>
+            <view class="bg-yellow text-sm padding-left padding-right round light" wx:if="{{item.openView}}" bindtap='verify' data-mess='{{item}}' data-set='false'>状态设置：已审</view>
+            <view class="bg-yellow text-sm text-sm padding-left padding-right round "wx:if="{{!item.openView}}" bindtap='verify' data-mess='{{item}}' data-set='true'>状态设置：未审</view>
+        <view>
+        </view>
+      </view>
+      </view>
+    </view>
+</view>
+
+	<view class="cu-form-group" wx:if="{{item.reply.code==0}}">
+     <text class="cuIcon-comment text-grey margin-right"></text>
+		<input placeholder="输入回复该留言" bindinput='replyInput' ></input>
+		<button class="cu-btn bg-yellow shadow" data-mess="{{item}}" bindtap='reply'>回复</button>
+	</view>
+</block>
+</block>      
