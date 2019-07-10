@@ -7,7 +7,7 @@
 
 ##### 线上预览：
 
-![宅梦网](http://img04.sogoucdn.com/app/a/100520146/11C0D2FFE0D0B15D35DE2BB691D18672 "宅梦网")
+![宅梦网](https://graph.baidu.com/resource/1124be3d5edde39f5b7b801562744885.jpg "宅梦网")
 无需服务器无需域名，仅需注册一个小程序（免费）即可拥有自己的完整博客系统
 
 
