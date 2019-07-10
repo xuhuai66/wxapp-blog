@@ -7,7 +7,8 @@
 
 ##### 线上预览：
 
-![宅梦网](https://graph.baidu.com/resource/1124be3d5edde39f5b7b801562744885.jpg "宅梦网")
+![宅梦网](https://graph.baidu.com/resource/1124be3d5edde39f5b7b801562744885.jpg "小程序：宅梦网")
+
 无需服务器无需域名，仅需注册一个小程序（免费）即可拥有自己的完整博客系统
 
 
