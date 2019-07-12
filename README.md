@@ -66,6 +66,8 @@ config.js中，设置对应数据
  
  4.【开发】- -【开发设置】--配置request和downloadfile域名
  
+ 5.客服自动闲聊机器人配置[https://mp.weixin.qq.com/s/T2w42TwP0qL4KeUXRcmw6A](https://mp.weixin.qq.com/s/T2w42TwP0qL4KeUXRcmw6A "https://mp.weixin.qq.com/s/T2w42TwP0qL4KeUXRcmw6A")
+ 
 #### 六、设置管理员
  
  首次设置需要打开云开发，然后去user表中将你的那一条记录的admin设置为true，如果user中没有记录，首先去前端中留言板那里点一下发布，然后确认登录，然后去数据库里面设置，设置完了删除掉小程序再打开，即清空了本地缓存，在个人中心即会出现后台管理
