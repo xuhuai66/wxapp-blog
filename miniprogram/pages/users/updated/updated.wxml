@@ -1,0 +1,42 @@
+
+<view class="cu-timeline">
+  <view class="cu-item text-yellow">
+    <view class="bg-yellow content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-yellow">v1.0.2</view>
+        <view class="cu-tag line-white">2019/7/13</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.个人中心增加客服闲聊机器人</view>
+        <view>2.【后台管理】新增内容管理，目前仅支持删除。</view>
+         <view>3.修复分类页下方分享栏遮挡问题</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-item text-yellow">
+    <view class="bg-yellow content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-yellow">v1.0.1</view>
+        <view class="cu-tag line-white">2019/7/11</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.分类及搜索页增加底部分享</view>
+        <view>2.修复首页一直提示加载问题</view>
+        <view>3.修改首页单次加载数量，解决setdata超限问题</view>
+        <view>4.修复详情页底部评论textarea层级过高导致穿透tabbar问题</view>
+        <view>5.优化了【后台】管理的部分页面</view>
+        <view>6.管理员评论回复页增加文章导航</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item text-yellow">
+    <view class="bg-yellow content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-yellow">v1.0.0</view>
+        <view class="cu-tag line-white">2019/7/8</view>
+      </view>
+      <view class="margin-top-sm text-content">1.0 新版本上线</view>
+    </view>
+  </view>
+</view>

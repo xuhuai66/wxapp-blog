@@ -29,13 +29,13 @@
         <text class="text-grey">赞赏作者</text>
       </view>
     </view>
-    <!-->还在写
+
     <view class="cu-item arrow">
       <button class="cu-btn content" open-type="contact">
         <text class="cuIcon-friendfamous text-green"></text>
         <text class="text-grey">寂寞宅妹</text>
       </button>
-    </view>-->
+    </view>
 
  <view class="cu-item arrow" bindtap='go' data-to='/pages/users/message/message'>
       <view class="content">
@@ -61,10 +61,10 @@
     </view>
 
 
- <view class="cu-item arrow" bindtap='tips' data-to='/pages/user/set/set'>
+ <view class="cu-item arrow" bindtap='go' data-to='/pages/users/updated/updated'>
       <view class="content">
-        <text class="cuIcon-settings text-grey"></text>
-        <text class="text-grey">通用设置</text>
+        <text class="cuIcon-squarecheck text-cyan"></text>
+        <text class="text-grey">更新日志</text>
       </view>
     </view>
 

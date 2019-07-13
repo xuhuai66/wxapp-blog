@@ -26,7 +26,7 @@
     </view>
     <view class="padding">
       	<view class="cu-form-group">
-		<textarea maxlength="22"  bindinput="gzhInput" placeholder="请输入关联的公众号，请确保小程序与公众号关联成功" value='{{gzh}}'></textarea>
+		<textarea show-confirm-bar="{{false}}" maxlength="22"  bindinput="gzhInput" placeholder="请输入关联的公众号，请确保小程序与公众号关联成功" value='{{gzh}}'></textarea>
 	</view>
     </view>
     <view class='flex '>

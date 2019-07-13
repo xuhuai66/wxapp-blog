@@ -47,7 +47,7 @@ Page({
           options: 'i',
         })
       })
-      .limit(20) // 限制返回数量为20 条
+      .limit(10) // 限制返回数量为20 条
       .orderBy('updatedTime', 'desc')
       .get({
         success(e) {
@@ -69,7 +69,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    var page = that.data.page + 20;
+    var page = that.data.page + 10;
     db.collection('published')
       .where({
         openView: true,
@@ -79,7 +79,7 @@ Page({
         })
       })
       .skip(page) // 跳过结果集中的前(page)条，从第(page+1) 条开始返回
-      .limit(20) // 限制返回数量为20条
+      .limit(10) // 限制返回数量为20条
       .orderBy('updatedTime', 'desc')
       .get({
         success(e) {

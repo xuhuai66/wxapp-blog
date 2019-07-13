@@ -13,7 +13,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       userInfo: app.globalData.userInfo
-    })
+    });
+    console.log(app.globalData.userInfo)
   },
   //赞赏图
   likeImg() {

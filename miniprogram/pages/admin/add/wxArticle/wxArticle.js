@@ -61,8 +61,22 @@ Page({
     com.get(URL).then((res) => {
       that.setData({
         article: res.data
+      });
+      wx.cloud.callFunction({
+        name: 'down',
+        data: {
+          url: url
+        },
+        complete: res => {
+          console.log(res)
+          this.setData({
+            html: res.result
+          })
+          wx.hideLoading();
+        },
       })
     })
+    /*
     wx.cloud.callFunction({
       name: 'down',
       data: {
@@ -75,7 +89,7 @@ Page({
         })
         wx.hideLoading();
       },
-    })
+    })*/
   },
   //获取剪切板
   stick() {
@@ -140,6 +154,9 @@ Page({
           }
         })
       },
+      fail:res=>{
+        console.log(res)
+      }
     })
   },
 })

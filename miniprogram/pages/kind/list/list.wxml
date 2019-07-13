@@ -1,6 +1,6 @@
 <scroll-view  scroll-y scroll-with-animation  style="height:calc(100vh );" bindscrolltolower="bottom">
 <ad unit-id="{{BannerAd}}"></ad>
-<block wx:for="{{list}}"  wx:key="*this">
+<block wx:for="{{list}}"  wx:key="index">
    <view wx:for="{{item}}"  wx:key="_id"  style='width:{{Width}}px;margin:15px;background:#ffffff;border-radius:10px;overflow:hidden;box-shadow: 0px 0px 15px #888888;'class='solid-bottom'>
 
        <!--图片类-->
@@ -22,7 +22,7 @@
             <!--3-9张图片-->  
             <view wx:else >
                 <swiper autoplay interval="2500" duration="500" circular display-multiple-items="2" style="width:{{Width}}px;height:{{Width*0.6/2}}px;" easing-function="linear">
-                   <block wx:for="{{item.clouldPath}}">
+                   <block wx:for="{{item.clouldPath}}" wx:key="*this">
                          <swiper-item>
                                 <image mode='aspectFill' lazy-load src="{{item}}" class="slide-image" style="width:{{Width/2}}px;height:{{Width/2*0.6}}px;" bindtap='previewImg' data-img='{{item}}' />
                          </swiper-item>

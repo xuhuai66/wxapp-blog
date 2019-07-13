@@ -16,6 +16,7 @@
     "pages/users/about/about",
     "pages/users/comments/comments",
     "pages/users/message/message",
+    "pages/users/updated/updated",
 
     "pages/admin/people/people",
     "pages/admin/home/home",

@@ -37,11 +37,11 @@
     
     <view class="cu-form-group">
 		    <view class="title">分类标题</view>
-	    	<input placeholder="仅支持最多6个字" value='{{title}}' bindinput='titleInput' maxlength='6'></input>
+	    	<input confirm-type="done"  placeholder="仅支持最多6个字" value='{{title}}' bindinput='titleInput' maxlength='6'></input>
     </view>   
     <view class="cu-form-group">
         <view class="title">分类描述</view>
-	    	<input placeholder="仅支持最多11个字" value='{{des}}' bindinput='desInput' maxlength='11'></input>
+	    	<input  confirm-type="done"  placeholder="仅支持最多11个字" value='{{des}}' bindinput='desInput' maxlength='11'></input>
 	  </view>
     	<view class="cu-form-group">
 		<view class="title">封面图</view>

@@ -9,6 +9,9 @@ Page({
   },
 
   onLoad: function() {
+    wx.showLoading({
+      title: '加载中...',
+    });
     this.login();
     this.getNotice();
     this.width();
@@ -39,14 +42,11 @@ search(){
   //获取发布数据
 list(){
   var that = this;
-  wx.showLoading({
-    title: '加载中...',
-  })
   db.collection('published')
    .where({
     openView:true
     })
-    .limit(20) // 限制返回数量为 20 条
+    .limit(10) // 限制返回数量为 20 条
     .orderBy('updatedTime', 'desc')
     .get({
       success(e){
@@ -64,18 +64,18 @@ list(){
     wx.showLoading({
       title: '加载中',
     })
-    var page = that.data.page+20;
+    var page = that.data.page+10;
     db.collection('published')
         .where({
          openView:true
         })
        .skip(page) // 跳过结果集中的前(page)条，从第(page+1) 条开始返回
-      .limit(20) // 限制返回数量为20 条
+      .limit(10) // 限制返回数量为20 条
       .orderBy('updatedTime', 'desc')
       .get({
         success(e) {
-          wx.hideLoading();
           if (e.data =="") {
+            wx.hideLoading();
             wx.showToast({
               title: '已加载到底',
             });
@@ -85,6 +85,7 @@ list(){
             page:page,
             ["list[" + page + "]"]:e.data
           })
+          wx.hideLoading();
         }
       })
   },

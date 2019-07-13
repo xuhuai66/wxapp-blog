@@ -34,8 +34,8 @@
     </view>
   </view>
   <view class='text-grey text-lg'>目前本程序已开源发布在Github</view>
-    <view class='text-grey text-lg  margin-top-xs'  bindtap='copy' data-copy='https://github.com/xuhuai66/userd-books'>地址：<text class='text-blue underline text-sub'>https://github.com/xuhuai66/wxapp-blog</text></view>
-     <view class='text-grey text-lg  margin-top-xs'>相关部署教程正在整理，之后会更新在Github</view>
+    <view class='text-grey text-lg  margin-top-xs'  bindtap='copy' data-copy='https://github.com/xuhuai66/wxapp-blog'>地址：<text class='text-blue underline text-sub'>https://github.com/xuhuai66/wxapp-blog</text></view>
+     <view class='text-grey text-lg  margin-top-xs'>相关部署教程已更新发布在Github</view>
 
   <view class="cu-bar bg-white">
     <view class="action">

@@ -1,13 +1,6 @@
 <view style='position:fixed;'>
 <view style='height:{{CustomBar}}px;width:{{w_width}}px;' class='bg-yellow flex align-end' >
       <view style='padding-right:{{img3_width}}px;'>
-      <!-->   <view class="cu-bar input bg-yellow" style='background:#fbbd08'>
-            <view class="cu-avatar bg-yellow" style="border-radius:50%;overflow: hidden;">
-                 <open-data type="userAvatarUrl" ></open-data>
-            </view>
-            <input class="solid-bottom bg-white round padding-left text-sm" maxlength="300" cursor-spacing="10" placeholder='搜索：云开发' placeholder-class="text-sm"></input>
-        <button class="cu-btn line-white shadow-blur round sm" ><text class="cuIcon-search"></text>    搜索</button>
-        </view>-->
 
   <view class="cu-bar search bg-yellow">
     <view class="search-form round" style='background:#ffffff'>
@@ -37,7 +30,7 @@
 </view>
 <view style='padding-top:{{CustomBar+40}}px'>
 <scroll-view  scroll-y scroll-with-animation  style="height:calc(100vh - {{CustomBar+40}}px);" bindscrolltolower="bottom" bindtouchstart='list'>
-<block wx:for="{{list}}"  wx:key="*this">
+<block wx:for="{{list}}"  wx:key="index">
    <view wx:for="{{item}}"  wx:key="_id"  style='width:{{Width}}px;margin:15px;background:#ffffff;border-radius:10px;overflow:hidden;box-shadow: 0px 0px 15px #888888;'class='solid-bottom'>
 
        <!--图片类-->
@@ -60,7 +53,7 @@
             <!--3-9张图片-->  
             <view wx:else >
                 <swiper autoplay interval="2500" duration="500" circular display-multiple-items="2" style="width:{{Width}}px;height:{{Width*0.6/2}}px;" easing-function="linear">
-                   <block wx:for="{{item.clouldPath}}">
+                   <block wx:for="{{item.clouldPath}}" wx:key="*this">
                          <swiper-item>
                                 <image mode='aspectFill' lazy-load src="{{item}}" class="slide-image" style="width:{{Width/2}}px;height:{{Width/2*0.6}}px;" bindtap='previewImg' data-img='{{item}}' />
                          </swiper-item>

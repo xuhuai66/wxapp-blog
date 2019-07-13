@@ -1,9 +1,22 @@
 <template name="share">
-<view class='margin flex bg-white shadow-lg' style='border-radius:20rpx;position: fixed;bottom: 25rpx;left:0rpx;'>
+
+<!-->
+<view class='margin flex bg-white shadow-lg' style='border-radius:20rpx;position: fixed;bottom: 25rpx;left:0rpx;overflow:hidden;'>
        <view class="basis-xs flex justify-center align-center">
               <image src='https://graph.baidu.com/resource/1124b8929e7558aece5f601562500624.jpg' mode='widthFix' style='width:50rpx' />
        </view>
        <view class="basis-lg text-df padding-sm text-black">觉得我们的博客不错？赶快分享给好友，一起来使用吧 </view>
+       <view class="basis-xs flex justify-center align-center ">
+          <button class="cu-btn round bg-yellow" open-type='share'>分享</button>
+       </view>
+</view>
+-->
+
+<view class='margin flex bg-white shadow-lg align-center' style='border-radius:20rpx;position: fixed;bottom: 25rpx;left:0rpx;overflow:hidden;height:110rpx;'>
+       <view class="basis-xs flex justify-center align-center">
+                <image src='https://graph.baidu.com/resource/1124b8929e7558aece5f601562500624.jpg' mode='widthFix' style='width:50rpx' />
+       </view>
+        <view class="basis-lg text-df padding-sm text-black">觉得我们的博客不错？赶快分享给好友，一起来使用吧 </view>
        <view class="basis-xs flex justify-center align-center ">
           <button class="cu-btn round bg-yellow" open-type='share'>分享</button>
        </view>

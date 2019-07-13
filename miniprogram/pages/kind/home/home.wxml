@@ -16,6 +16,6 @@
 </block>
 </view>
 
-
+<view style='height:150rpx;'></view>
 
 <import src="/template.wxml"/><template is="share" />

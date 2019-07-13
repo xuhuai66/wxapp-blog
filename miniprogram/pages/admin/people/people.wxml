@@ -1,4 +1,4 @@
-<block wx:for="{{list}}" wx:key="*this">
+<block wx:for="{{list}}" wx:key="index">
  <block wx:for="{{item}}" wx:key="_id">
   <view class="cu-list menu-avatar">
     <view class="cu-item">

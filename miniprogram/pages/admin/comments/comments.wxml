@@ -1,4 +1,4 @@
-<block wx:for="{{list}}" wx:key="*this">
+<block wx:for="{{list}}" wx:key="index">
  <block wx:for="{{item}}" wx:key="_id">
 
 
@@ -37,7 +37,7 @@
 
 	<view class="cu-form-group" wx:if="{{item.reply.code==0}}">
      <text class="cuIcon-comment text-grey margin-right"></text>
-		<input placeholder="输入回复该留言" bindinput='replyInput' ></input>
+		<input placeholder="输入回复该留言" bindinput='replyInput' confirm-type='send' bindconfirm='reply'data-mess="{{item}}" ></input>
 		<button class="cu-btn bg-yellow shadow" data-mess="{{item}}" bindtap='reply'>回复</button>
 	</view>
 </block>

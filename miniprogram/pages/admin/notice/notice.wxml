@@ -27,7 +27,7 @@
     </view>
     <view class="padding">
       	<view class="cu-form-group">
-		<textarea maxlength="22"  bindinput="noticeInput" placeholder="请输入通知内容，最多支持21字，不然会被折叠" value='{{notice}}'></textarea>
+		<textarea show-confirm-bar="{{false}}"  maxlength="22"  bindinput="noticeInput" placeholder="请输入通知内容，最多支持21字，不然会被折叠" value='{{notice}}'></textarea>
 	</view>
     </view>
     <view class='flex '>
